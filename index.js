@@ -12,7 +12,6 @@ window.onload = function(){
           eleArr[i].classList.add('is--changed');
           //消去した要素の文字列
           text += eleArr[i].textContent
-          console.log(eleArr[i].className);
           if(eleArr[i].className.indexOf('is--last-content') != -1){
             parentSearch(eleArr[i],'js--default-section')
           }
@@ -76,7 +75,6 @@ window.onload = function(){
           if(i == ele.length - 1){
             let bcryptBtnEle = document.getElementById('js--bcrypt-btn');
             let contactBtnEle = document.getElementById('js--contact-btn');
-            console.log(contactBtnEle)
             bcryptBtnEle.classList.add('is--changed');
             setTimeout(() => {
               contactBtnEle.classList.add('is--changed');
