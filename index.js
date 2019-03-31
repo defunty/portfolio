@@ -82,7 +82,7 @@ window.onload = function(){
           let randomChar = randomCharsData[Math.floor(Math.random()*randomCharsData.length)];
           ele[i].textContent = randomChar;
           //それっぽく見せるために100回変換処理を行う
-          for(let j=0;j<1000;j++){
+          for(let j=0;j<100;j++){
             let randomChar = randomCharsData[Math.floor(Math.random()*randomCharsData.length)];
             ele[i].textContent = randomChar;
           }
