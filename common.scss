@@ -47,10 +47,13 @@ img{
   opacity: 0;
   transition: 1.0s all;
   margin: 90px auto 0;
-  width: 400px;
+  padding: 0 1rem;
+  width: 100%;
   word-break: break-all;
   @media screen and (min-width: 544px){
     margin: 0 auto;
+    padding: 0;
+    width: 400px;
   }
   &.is--changed{
     opacity: 1;
