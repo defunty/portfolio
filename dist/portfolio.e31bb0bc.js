@@ -2399,8 +2399,7 @@ window.onload = function () {
       _bcryptProcess = (0, _asyncToGenerator2.default)(
       /*#__PURE__*/
       _regenerator.default.mark(function _callee2() {
-        var resultEle, randomCharsData, ele, _loop, i;
-
+        var resultEle, randomCharsData, ele;
         return _regenerator.default.wrap(function _callee2$(_context2) {
           while (1) {
             switch (_context2.prev = _context2.next) {
@@ -2413,34 +2412,32 @@ window.onload = function () {
                 //変換先の文字列候補
                 randomCharsData = "abcdefghijklmnopqrstuvwxyz0123456789#$&%?!@";
                 ele = resultEle.getElementsByClassName('js--char');
-
-                _loop = function _loop(i) {
-                  setTimeout(function () {
-                    var randomChar = randomCharsData[Math.floor(Math.random() * randomCharsData.length)];
-                    ele[i].textContent = randomChar; //それっぽく見せるために100回変換処理を行う
-
-                    for (var j = 0; j < 100; j++) {
-                      var _randomChar = randomCharsData[Math.floor(Math.random() * randomCharsData.length)];
-                      ele[i].textContent = _randomChar;
-                    } //最後のforループでの処理
-
-
-                    if (i == ele.length - 1) {
-                      var bcryptBtnEle = document.getElementById('js--bcrypt-btn');
-                      var contactBtnEle = document.getElementById('js--contact-btn');
-                      bcryptBtnEle.classList.add('is--changed');
-                      setTimeout(function () {
-                        contactBtnEle.classList.add('is--changed');
-                      }, 1100);
+                /*
+                for(let i=0; i<ele.length; i++){
+                  setTimeout(() => {
+                    let randomChar = randomCharsData[Math.floor(Math.random()*randomCharsData.length)];
+                    ele[i].textContent = randomChar;
+                    //それっぽく見せるために100回変換処理を行う
+                    for(let j=0;j<100;j++){
+                      let randomChar = randomCharsData[Math.floor(Math.random()*randomCharsData.length)];
+                      ele[i].textContent = randomChar;
                     }
-                  }, 500);
-                };
-
-                for (i = 0; i < ele.length; i++) {
-                  _loop(i);
+                    
+                    //最後のforループでの処理
+                    if(i == ele.length - 1){
+                      let bcryptBtnEle = document.getElementById('js--bcrypt-btn');
+                      let contactBtnEle = document.getElementById('js--contact-btn');
+                      bcryptBtnEle.classList.add('is--changed');
+                      setTimeout(() => {
+                        contactBtnEle.classList.add('is--changed');
+                      }, 1100)
+                    }
+                    
+                  },500);
                 }
+                */
 
-              case 7:
+              case 5:
               case "end":
                 return _context2.stop();
             }
@@ -2479,7 +2476,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56596" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57473" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
