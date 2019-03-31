@@ -45,10 +45,13 @@ img{
 
 .c--crypt-container{
   opacity: 0;
-  margin: 0 auto;
   transition: 1.0s all;
+  margin: 30px auto 0;
   width: 400px;
   word-break: break-all;
+  @media screen and (min-width: 544px){
+    margin: 0 auto;
+  }
   &.is--changed{
     opacity: 1;
   }
@@ -269,11 +272,18 @@ img{
   li{
     display: inline-block;
     padding: 3px 5px;
-    height: 60px;
+    height: auto;
+    width: 25%;
+    @media screen and (min-width: 544px){
+      height: 60px;
+      width: auto;
+    }
     svg{
       display: block;
       height: 100%;
     }
+    
   }
+  
 }
 
