@@ -73,7 +73,7 @@ window.onload = function(){
       //変換先の文字列候補
       let randomCharsData = "abcdefghijklmnopqrstuvwxyz0123456789#$&%?!@";
       let ele = resultEle.getElementsByClassName('js--char');
-      /*
+      console.log(ele.length)
       for(let i=0; i<ele.length; i++){
         setTimeout(() => {
           let randomChar = randomCharsData[Math.floor(Math.random()*randomCharsData.length)];
@@ -96,7 +96,7 @@ window.onload = function(){
           
         },500);
       }
-      */
+      
     }
     
   });
