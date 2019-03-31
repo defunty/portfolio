@@ -2269,81 +2269,62 @@ module.exports = _asyncToGenerator;
 
 var _regenerator = _interopRequireDefault(require("@babel/runtime-corejs2/regenerator"));
 
-var _promise = _interopRequireDefault(require("@babel/runtime-corejs2/core-js/promise"));
-
 var _asyncToGenerator2 = _interopRequireDefault(require("@babel/runtime-corejs2/helpers/asyncToGenerator"));
+
+var _promise = _interopRequireDefault(require("@babel/runtime-corejs2/core-js/promise"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 window.onload = function () {
   var ele = document.getElementById('js--bcrypt-btn');
   ele.addEventListener("click", function () {
-    var text = '';
-    var eleDefault = document.getElementsByClassName('js--default');
-    bcryptProcess();
+    //let text = '';
+    //let eleDefault = document.getElementsByClassName('js--default');
+    bcryptProcess(); //eleArrのi番目のelementのclassを変更し、delayミリ秒待機する
 
-    function eraseElements(_x, _x2, _x3) {
-      return _eraseElements.apply(this, arguments);
-    }
+    function eraseElements(eleArr, i, delay) {
+      var text = '';
+      return new _promise.default(function (resolve) {
+        if (eleArr.length > i) {
+          //baseEleの親要素の中から一番近いtargetClassの要素を探索する
+          var parentSearch = function parentSearch(baseEle, targetClass) {
+            var parents = []; //const parentElem = function (ele) {
 
-    function _eraseElements() {
-      _eraseElements = (0, _asyncToGenerator2.default)(
-      /*#__PURE__*/
-      _regenerator.default.mark(function _callee(eleArr, i, delay) {
-        return _regenerator.default.wrap(function _callee$(_context) {
-          while (1) {
-            switch (_context.prev = _context.next) {
-              case 0:
-                return _context.abrupt("return", new _promise.default(function (resolve) {
-                  if (eleArr.length > i) {
-                    //baseEleの親要素の中から一番近いtargetClassの要素を探索する
-                    var parentSearch = function parentSearch(baseEle, targetClass) {
-                      var parents = []; //const parentElem = function (ele) {
-
-                      var parentElem = function parentElem(ele) {
-                        if (ele.parentNode) {
-                          if (ele.parentNode.className) {
-                            if (ele.parentNode.className.indexOf(targetClass) != -1) {
-                              //ele.parentNode.style.display = 'none';
-                              setTimeout(function () {
-                                ele.parentNode.style.display = 'none';
-                              }, delay + 100);
-                            }
-                          }
-
-                          parents.push(ele.parentNode);
-                          parentElem(ele.parentNode);
-                        }
-                      };
-
-                      parents['prevObject'] = baseEle;
-                      parentElem(baseEle);
-                    };
-
-                    eleArr[i].classList.add('is--changed'); //消去した要素の文字列
-
-                    text += eleArr[i].textContent;
-                    console.log(eleArr[i].className);
-
-                    if (eleArr[i].className.indexOf('is--last-content') != -1) {
-                      parentSearch(eleArr[i], 'js--default-section');
-                    }
-
+            var parentElem = function parentElem(ele) {
+              if (ele.parentNode) {
+                if (ele.parentNode.className) {
+                  if (ele.parentNode.className.indexOf(targetClass) != -1) {
+                    //ele.parentNode.style.display = 'none';
                     setTimeout(function () {
-                      return resolve(i);
-                    }, delay);
-                    ;
+                      ele.parentNode.style.display = 'none';
+                    }, delay + 100);
                   }
-                }));
+                }
 
-              case 1:
-              case "end":
-                return _context.stop();
-            }
+                parents.push(ele.parentNode);
+                parentElem(ele.parentNode);
+              }
+            };
+
+            parents['prevObject'] = baseEle;
+            parentElem(baseEle);
+          };
+
+          //is--changedクラスを付与して透明化させる（別途CSSで記述）
+          eleArr[i].classList.add('is--changed'); //消去した要素の文字列
+
+          text += eleArr[i].textContent;
+
+          if (eleArr[i].className.indexOf('is--last-content') != -1) {
+            parentSearch(eleArr[i], 'js--default-section');
           }
-        }, _callee);
-      }));
-      return _eraseElements.apply(this, arguments);
+
+          setTimeout(function () {
+            return resolve(text);
+          }, delay);
+          ;
+        }
+      });
     }
 
     function insertText() {
@@ -2353,30 +2334,32 @@ window.onload = function () {
     function _insertText() {
       _insertText = (0, _asyncToGenerator2.default)(
       /*#__PURE__*/
-      _regenerator.default.mark(function _callee2() {
-        var result, i, _ele, html, j;
+      _regenerator.default.mark(function _callee() {
+        var eleDefault, text, i, _ele, html, j;
 
-        return _regenerator.default.wrap(function _callee2$(_context2) {
+        return _regenerator.default.wrap(function _callee$(_context) {
           while (1) {
-            switch (_context2.prev = _context2.next) {
+            switch (_context.prev = _context.next) {
               case 0:
-                result = 0;
+                eleDefault = document.getElementsByClassName('js--default');
+                text = '';
                 i = 0;
 
-              case 2:
+              case 3:
                 if (!(i < eleDefault.length)) {
-                  _context2.next = 16;
+                  _context.next = 18;
                   break;
                 }
 
-                _context2.next = 5;
+                _context.t0 = text;
+                _context.next = 7;
                 return eraseElements(eleDefault, i, 400);
 
-              case 5:
-                result = _context2.sent;
+              case 7:
+                text = _context.t0 += _context.sent;
 
                 if (!(i === eleDefault.length - 1)) {
-                  _context2.next = 13;
+                  _context.next = 15;
                   break;
                 }
 
@@ -2391,19 +2374,19 @@ window.onload = function () {
 
                 _ele.classList.add('is--changed');
 
-                return _context2.abrupt("return", _ele);
+                return _context.abrupt("return", _ele);
 
-              case 13:
+              case 15:
                 i++;
-                _context2.next = 2;
+                _context.next = 3;
                 break;
 
-              case 16:
+              case 18:
               case "end":
-                return _context2.stop();
+                return _context.stop();
             }
           }
-        }, _callee2);
+        }, _callee);
       }));
       return _insertText.apply(this, arguments);
     }
@@ -2415,38 +2398,39 @@ window.onload = function () {
     function _bcryptProcess() {
       _bcryptProcess = (0, _asyncToGenerator2.default)(
       /*#__PURE__*/
-      _regenerator.default.mark(function _callee3() {
+      _regenerator.default.mark(function _callee2() {
         var resultEle, randomCharsData, ele, _loop, i;
 
-        return _regenerator.default.wrap(function _callee3$(_context3) {
+        return _regenerator.default.wrap(function _callee2$(_context2) {
           while (1) {
-            switch (_context3.prev = _context3.next) {
+            switch (_context2.prev = _context2.next) {
               case 0:
-                _context3.next = 2;
+                _context2.next = 2;
                 return insertText();
 
               case 2:
-                resultEle = _context3.sent;
+                resultEle = _context2.sent;
+                //変換先の文字列候補
                 randomCharsData = "abcdefghijklmnopqrstuvwxyz0123456789#$&%?!@";
                 ele = resultEle.getElementsByClassName('js--char');
 
                 _loop = function _loop(i) {
                   setTimeout(function () {
                     var randomChar = randomCharsData[Math.floor(Math.random() * randomCharsData.length)];
-                    ele[i].textContent = randomChar;
+                    ele[i].textContent = randomChar; //それっぽく見せるために100回変換処理を行う
 
                     for (var j = 0; j < 100; j++) {
                       var _randomChar = randomCharsData[Math.floor(Math.random() * randomCharsData.length)];
                       ele[i].textContent = _randomChar;
-                    }
+                    } //最後のforループでの処理
+
 
                     if (i == ele.length - 1) {
                       var bcryptBtnEle = document.getElementById('js--bcrypt-btn');
                       var contactBtnEle = document.getElementById('js--contact-btn');
-                      console.log(contactBtnEle);
                       bcryptBtnEle.classList.add('is--changed');
                       setTimeout(function () {
-                        contactBtnEle.classList.add('is--changed'); //bcryptBtnEle.style.display = 'none';
+                        contactBtnEle.classList.add('is--changed');
                       }, 1100);
                     }
                   }, 500);
@@ -2458,16 +2442,16 @@ window.onload = function () {
 
               case 7:
               case "end":
-                return _context3.stop();
+                return _context2.stop();
             }
           }
-        }, _callee3);
+        }, _callee2);
       }));
       return _bcryptProcess.apply(this, arguments);
     }
   });
 };
-},{"@babel/runtime-corejs2/regenerator":"node_modules/@babel/runtime-corejs2/regenerator/index.js","@babel/runtime-corejs2/core-js/promise":"node_modules/@babel/runtime-corejs2/core-js/promise.js","@babel/runtime-corejs2/helpers/asyncToGenerator":"node_modules/@babel/runtime-corejs2/helpers/asyncToGenerator.js"}],"../../../../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"@babel/runtime-corejs2/regenerator":"node_modules/@babel/runtime-corejs2/regenerator/index.js","@babel/runtime-corejs2/helpers/asyncToGenerator":"node_modules/@babel/runtime-corejs2/helpers/asyncToGenerator.js","@babel/runtime-corejs2/core-js/promise":"node_modules/@babel/runtime-corejs2/core-js/promise.js"}],"../../../../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -2495,7 +2479,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56003" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56596" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
