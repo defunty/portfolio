@@ -51,7 +51,7 @@ window.onload = function(){
       let text = '';
       for(let i=0;i<eleDefault.length;i++){
         //eleDefaultの内部要素を消して待機する
-        text += await eraseElements(eleDefault, i, 300);
+        text += await eraseElements(eleDefault, i, 250);
         //最後のforループでの処理
         if(i === eleDefault.length - 1){
           let ele = document.getElementById('js--bcrypt-container');
@@ -81,8 +81,8 @@ window.onload = function(){
         setTimeout(() => {
           let randomChar = randomCharsData[Math.floor(Math.random()*randomCharsData.length)];
           ele[i].textContent = randomChar;
-          //それっぽく見せるために100回変換処理を行う
-          for(let j=0;j<100;j++){
+          //それっぽく見せるために50回変換処理を行う
+          for(let j=0;j<50;j++){
             let randomChar = randomCharsData[Math.floor(Math.random()*randomCharsData.length)];
             ele[i].textContent = randomChar;
           }

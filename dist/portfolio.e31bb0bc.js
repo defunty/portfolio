@@ -2353,7 +2353,7 @@ window.onload = function () {
 
                 _context.t0 = text;
                 _context.next = 7;
-                return eraseElements(eleDefault, i, 300);
+                return eraseElements(eleDefault, i, 250);
 
               case 7:
                 text = _context.t0 += _context.sent;
@@ -2420,9 +2420,9 @@ window.onload = function () {
                 _loop = function _loop(i) {
                   setTimeout(function () {
                     var randomChar = randomCharsData[Math.floor(Math.random() * randomCharsData.length)];
-                    ele[i].textContent = randomChar; //それっぽく見せるために100回変換処理を行う
+                    ele[i].textContent = randomChar; //それっぽく見せるために50回変換処理を行う
 
-                    for (var j = 0; j < 100; j++) {
+                    for (var j = 0; j < 50; j++) {
                       var _randomChar = randomCharsData[Math.floor(Math.random() * randomCharsData.length)];
                       ele[i].textContent = _randomChar;
                     } //最後のforループでの処理
@@ -2482,7 +2482,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55233" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57806" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

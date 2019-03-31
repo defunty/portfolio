@@ -51,12 +51,15 @@ img {
   opacity: 0;
   transition: 1s all;
   margin: 90px auto 0;
-  width: 400px;
+  padding: 0 1rem;
+  width: 100%;
   word-break: break-all;
 }
 @media screen and (min-width: 544px) {
   .c--crypt-container {
     margin: 0 auto;
+    padding: 0;
+    width: 400px;
   }
 }
 .c--crypt-container.is--changed {
