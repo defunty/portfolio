@@ -51,12 +51,15 @@ window.onload = function(){
       let text = '';
       for(let i=0;i<eleDefault.length;i++){
         //eleDefaultの内部要素を消して待機する
-        text += await eraseElements(eleDefault, i, 400);
+        text += await eraseElements(eleDefault, i, 300);
         //最後のforループでの処理
         if(i === eleDefault.length - 1){
           let ele = document.getElementById('js--bcrypt-container');
           let html = '';
           for(let j=0;j<text.length;j++){
+            let char = text[j];
+            //if(char === ' '){ char = 'a'; console.log('space')}
+            //console.log(char);
             html += '<span class="js--char">' + text[j] + '</span>'
           }
           ele.innerHTML = html;
@@ -73,7 +76,7 @@ window.onload = function(){
       //変換先の文字列候補
       let randomCharsData = "abcdefghijklmnopqrstuvwxyz0123456789#$&%?!@";
       let ele = resultEle.getElementsByClassName('js--char');
-      console.log(ele.length)
+      
       for(let i=0; i<ele.length; i++){
         setTimeout(() => {
           let randomChar = randomCharsData[Math.floor(Math.random()*randomCharsData.length)];
@@ -96,6 +99,8 @@ window.onload = function(){
           
         },500);
       }
+      
+      
       
     }
     

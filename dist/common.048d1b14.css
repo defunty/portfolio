@@ -3,6 +3,7 @@
 *::after {
   color: #333;
   box-sizing: border-box;
+  font-family: helvetica, arial, "hiragino kaku gothic pro", meiryo, "ms pgothic", sans-serif;
   margin: 0;
   padding: 0;
 }
@@ -164,6 +165,23 @@ img {
     width: 47%;
   }
 }
+@media screen and (min-width: 544px) {
+  .c--experiment-list li:nth-child(1) .experiment-container {
+    margin: 0;
+  }
+  .c--experiment-list li:nth-child(2) .experiment-container {
+    margin: 60px 0 0;
+  }
+  .c--experiment-list li:nth-child(3) .experiment-container {
+    margin: 0;
+  }
+  .c--experiment-list li:nth-child(4) .experiment-container {
+    margin: 30px 0 0;
+  }
+  .c--experiment-list li:nth-child(5) .experiment-container {
+    margin: 0;
+  }
+}
 .c--experiment-list li .experiment-container {
   /*background-color: #fff;*/
   background-color: #21242d;
@@ -189,17 +207,6 @@ img {
 }
 .c--experiment-list li .experiment-container .tech {
   font-size: 0.6rem;
-}
-@media screen and (min-width: 544px) {
-  .c--experiment-list li:nth-child(1) .experiment-container {
-    margin: 0;
-  }
-  .c--experiment-list li:nth-child(2) .experiment-container {
-    margin: 60px 0 0;
-  }
-  .c--experiment-list li:nth-child(3) .experiment-container {
-    margin: -30px 0 0;
-  }
 }
 
 .c--works-list {
@@ -248,6 +255,27 @@ img {
   height: 3em;
   padding: 0 0.5rem;
   width: 100%;
+}
+
+.c--skill-list {
+  /*
+  background-color: #fff;
+  border: 1px solid rgba(0,0,0,1);
+  border-radius: 4px;
+  */
+  display: flex;
+  flex-wrap: wrap;
+  padding: 1rem;
+  width: 100%;
+}
+.c--skill-list li {
+  display: inline-block;
+  padding: 3px 5px;
+  height: 60px;
+}
+.c--skill-list li svg {
+  display: block;
+  height: 100%;
 }
 
 /*# sourceMappingURL=/common.048d1b14.css.map */

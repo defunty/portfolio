@@ -2335,7 +2335,7 @@ window.onload = function () {
       _insertText = (0, _asyncToGenerator2.default)(
       /*#__PURE__*/
       _regenerator.default.mark(function _callee() {
-        var eleDefault, text, i, _ele, html, j;
+        var eleDefault, text, i, _ele, html, j, char;
 
         return _regenerator.default.wrap(function _callee$(_context) {
           while (1) {
@@ -2353,7 +2353,7 @@ window.onload = function () {
 
                 _context.t0 = text;
                 _context.next = 7;
-                return eraseElements(eleDefault, i, 400);
+                return eraseElements(eleDefault, i, 300);
 
               case 7:
                 text = _context.t0 += _context.sent;
@@ -2367,6 +2367,9 @@ window.onload = function () {
                 html = '';
 
                 for (j = 0; j < text.length; j++) {
+                  char = text[j]; //if(char === ' '){ char = 'a'; console.log('space')}
+                  //console.log(char);
+
                   html += '<span class="js--char">' + text[j] + '</span>';
                 }
 
@@ -2399,7 +2402,8 @@ window.onload = function () {
       _bcryptProcess = (0, _asyncToGenerator2.default)(
       /*#__PURE__*/
       _regenerator.default.mark(function _callee2() {
-        var resultEle, randomCharsData, ele;
+        var resultEle, randomCharsData, ele, _loop, i;
+
         return _regenerator.default.wrap(function _callee2$(_context2) {
           while (1) {
             switch (_context2.prev = _context2.next) {
@@ -2412,32 +2416,34 @@ window.onload = function () {
                 //変換先の文字列候補
                 randomCharsData = "abcdefghijklmnopqrstuvwxyz0123456789#$&%?!@";
                 ele = resultEle.getElementsByClassName('js--char');
-                /*
-                for(let i=0; i<ele.length; i++){
-                  setTimeout(() => {
-                    let randomChar = randomCharsData[Math.floor(Math.random()*randomCharsData.length)];
-                    ele[i].textContent = randomChar;
-                    //それっぽく見せるために100回変換処理を行う
-                    for(let j=0;j<100;j++){
-                      let randomChar = randomCharsData[Math.floor(Math.random()*randomCharsData.length)];
-                      ele[i].textContent = randomChar;
-                    }
-                    
-                    //最後のforループでの処理
-                    if(i == ele.length - 1){
-                      let bcryptBtnEle = document.getElementById('js--bcrypt-btn');
-                      let contactBtnEle = document.getElementById('js--contact-btn');
-                      bcryptBtnEle.classList.add('is--changed');
-                      setTimeout(() => {
-                        contactBtnEle.classList.add('is--changed');
-                      }, 1100)
-                    }
-                    
-                  },500);
-                }
-                */
 
-              case 5:
+                _loop = function _loop(i) {
+                  setTimeout(function () {
+                    var randomChar = randomCharsData[Math.floor(Math.random() * randomCharsData.length)];
+                    ele[i].textContent = randomChar; //それっぽく見せるために100回変換処理を行う
+
+                    for (var j = 0; j < 100; j++) {
+                      var _randomChar = randomCharsData[Math.floor(Math.random() * randomCharsData.length)];
+                      ele[i].textContent = _randomChar;
+                    } //最後のforループでの処理
+
+
+                    if (i == ele.length - 1) {
+                      var bcryptBtnEle = document.getElementById('js--bcrypt-btn');
+                      var contactBtnEle = document.getElementById('js--contact-btn');
+                      bcryptBtnEle.classList.add('is--changed');
+                      setTimeout(function () {
+                        contactBtnEle.classList.add('is--changed');
+                      }, 1100);
+                    }
+                  }, 500);
+                };
+
+                for (i = 0; i < ele.length; i++) {
+                  _loop(i);
+                }
+
+              case 7:
               case "end":
                 return _context2.stop();
             }
@@ -2476,7 +2482,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57473" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49730" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
