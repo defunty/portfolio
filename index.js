@@ -81,8 +81,8 @@ window.onload = function(){
         setTimeout(() => {
           let randomChar = randomCharsData[Math.floor(Math.random()*randomCharsData.length)];
           ele[i].textContent = randomChar;
-          //それっぽく見せるために50回変換処理を行う
-          for(let j=0;j<50;j++){
+          //それっぽく見せるために100回変換処理を行う
+          for(let j=0;j<1000;j++){
             let randomChar = randomCharsData[Math.floor(Math.random()*randomCharsData.length)];
             ele[i].textContent = randomChar;
           }
