@@ -49,10 +49,15 @@ img {
 
 .c--crypt-container {
   opacity: 0;
-  margin: 0 auto;
   transition: 1s all;
+  margin: 90px auto 0;
   width: 400px;
   word-break: break-all;
+}
+@media screen and (min-width: 544px) {
+  .c--crypt-container {
+    margin: 0 auto;
+  }
 }
 .c--crypt-container.is--changed {
   opacity: 1;
@@ -271,7 +276,14 @@ img {
 .c--skill-list li {
   display: inline-block;
   padding: 3px 5px;
-  height: 60px;
+  height: auto;
+  width: 25%;
+}
+@media screen and (min-width: 544px) {
+  .c--skill-list li {
+    height: 60px;
+    width: auto;
+  }
 }
 .c--skill-list li svg {
   display: block;
