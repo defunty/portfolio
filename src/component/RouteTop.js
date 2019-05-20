@@ -22,14 +22,16 @@ const RouteTop = () => {
       case 'content':
         console.log('content');
         return(<Content />);
-        break;  
+        break;
     }
   }
   
   return (
     <PageContent className={isDisplay}>
-      { getDisplayContent() }
-      {/*<Particle />*/}
+      <div>
+        <div>{ getDisplayContent() }</div>
+      </div>
+      <Particle />
     </PageContent>
   );
 }
@@ -38,7 +40,7 @@ const Content = () => {
   return (
     <ContentWrapper>
       <Title>
-        <div className="title">
+        <div className="title test">
           Yusuke Inoue's Portfolio
         </div>
       </Title>

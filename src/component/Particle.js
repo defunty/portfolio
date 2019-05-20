@@ -66,6 +66,7 @@ const Particle = () => (
 
 const StyleParticles = styled(Particles)`
   height: 100%;
+  z-index: 10000;
 `;
 
 

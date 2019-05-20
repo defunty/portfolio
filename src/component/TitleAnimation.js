@@ -12,7 +12,8 @@ const TitleAnimation = () => (
         </g>
       </svg>
     </MainTitleWrapper>
-    {/*<Overlay />*/}
+    <Overlay />
+    
   </React.Fragment>
 )
 
@@ -139,10 +140,10 @@ const MainTitleWrapper = styled.h1`
   background: ${props => props.primary ? "palevioletred" : "white"};
   color: ${props => props.primary ? "white" : "palevioletred"};
   */
-  background-color: #fff;
+  background-color: transparent;
   color: #333;
-  height: 100%;
   position: fixed;
+  height: 100%;
   width: 100%;
 
   svg text {
