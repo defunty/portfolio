@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { Link } from 'react-router-dom'
 import styled from 'styled-components';
 import TitleAnimation from './TitleAnimation.js';
@@ -9,10 +9,27 @@ import Particle from './Particle.js';
 
 
 const RouteTop = () => {
+  const [isDisplay, setIsDisplay] = useState('title');
+  const getDisplayContent = () => {
+    switch(isDisplay){
+      case 'title':
+        setTimeout(()=>{
+          //setIsDisplay('content');
+        },5500);
+        console.log('title')
+        return(<TitleAnimation />);
+        break;
+      case 'content':
+        console.log('content');
+        return(<Content />);
+        break;  
+    }
+  }
+  
   return (
-    <PageContent>
-      <TitleAnimation />
-      <Content />
+    <PageContent className={isDisplay}>
+      { getDisplayContent() }
+      {/*<Particle />*/}
     </PageContent>
   );
 }
@@ -22,52 +39,48 @@ const Content = () => {
     <ContentWrapper>
       <Title>
         <div className="title">
-          <SVGText id="test" x="50%" y="98%" content="Yusuke Inoue's Portfolio" />
+          Yusuke Inoue's Portfolio
         </div>
       </Title>
-      {/*<Link to='/about'><SVGText content="ABOUT" /></Link>*/}
       <LinkWrapper>
         <Link className="icon" to='/about'>
           <SVGPowerOff />
         </Link>
       </LinkWrapper>
       <Footer>&copy;2019 Yusuke Inoue All Rights Reserved.</Footer>
-      <Particle />
     </ContentWrapper>
+    
   );
 }
 
 // style
 const PageContent = styled.div`
-  opacity: 0;
+  background-color: #fff;
+  opacity: 1;
   height: 100%;
   width: 100%;
+  z-index: 1;
   * {
     color: #fff;
     fill: #fff;
   }
-  animation: 'page-transition' 1.5s ease-in-out 0s both;
+  
   @keyframes  page-transition {
     0% { opacity: 0; }
     100% { opacity: 1; }
   }
-  a {
-    display: block;
-    margin: 0 auto;
-    border-radius: 4px;
-    width: auto;
+  
+  &.content {
+    background-color: #000;
   }
 `;
 
 const ContentWrapper = styled.div`
 display: block;
-position: relative
+position: relative;
 height: 100%;
 width: 100%;
 z-index: 100;
-
-
-
 `;
 
 const Title = styled.div`
@@ -75,7 +88,7 @@ const Title = styled.div`
   opacity: 0;
   position: fixed;
   width: 100%;
-  animation: 'initial-animation-link' 0.5s ease-in-out 5s both;
+  animation: 'initial-animation-link' 0.5s ease-in-out 0s both;
   @keyframes  initial-animation-link {
     0% { opacity: 0; }
     100% { opacity: 1; }
@@ -83,16 +96,12 @@ const Title = styled.div`
 
   .title{
     position: absolute;
+    text-align: center;
     bottom: 0;
     height: auto;
     width: 100%;
     z-index: 100;
-  }
-  svg text {
-    /*filter: drop-shadow(-10px -10px 3px blue) invert(0%);*/
-    stroke: #fff;
-    fill: #fff;
-    animation: 'up-down-transition' 8.4s ease-in-out 8.4s infinite both;
+    animation: 'up-down-transition' 8.4s ease-in-out 3.4s infinite both;
     @keyframes  up-down-transition {
       0% { transform: translateY(0px); }
       15% { transform: translateY(0px); }
@@ -101,20 +110,20 @@ const Title = styled.div`
       80% { transform: translateY(0px); }
       100% { transform: translateY(0px); }
     }
-
   }
+
 `;
 
 const LinkWrapper = styled.div`
   display: inline-block;
-  text-align center;
+  text-align: center;
   opacity: 0;
   position: fixed;
   top: 50vh;
   padding: 20px;
   width: 100%;
 
-  animation: 'initial-animation-link' 0.5s ease-in-out 7s both;
+  animation: 'initial-animation-link' 0.5s ease-in-out 2s both;
   
   a {
     display: inline-block;
@@ -172,7 +181,7 @@ const Footer = styled.div`
   padding-right: 20px;
   width: 100%;
 
-  animation: 'initial-animation-link' 0.5s ease-in-out 6.5s both;
+  animation: 'initial-animation-link' 0.5s ease-in-out  1.0s both;
 
 `;
 
