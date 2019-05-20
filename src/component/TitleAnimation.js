@@ -113,7 +113,8 @@ const MainTitleWrapper = styled.h1`
   }
 `;
 const Overlay = styled.div`
-  background-color: black;
+  /*background-color: rgb(35,39,65);*/
+  background-color: rgba(0,0,0,1);
   height: 100%;
   position: absolute;
   top: 0;

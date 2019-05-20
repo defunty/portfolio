@@ -1,33 +1,39 @@
 import React from 'react';
-import { Link } from 'react-router-dom'
-import SVGText from './SVGText.js';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import Header from './Header.js';
+import Particle from './Particle.js';
 
-
-class RouteAbout extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {data: "notActive"};
-  }
-  render() {
-    return (
+const RouteAbout = () => {
+  return(
     <PageContent>
-      <div>test</div>
+      <Header />
+      <Content></Content>
+      <Particle />
     </PageContent>
-    );
-  }
+  );
 }
 
+const Content = () => {
+  return(
+    <StyledContent>
+      テスト
+    </StyledContent>
+  );
+}
+
+//style
 const PageContent = styled.div`
-  background-color: black;
-  transition: 2s add;
-  position: relative;
+  background-color: #000;
+  position: fixed;
   height: 100%;
   width: 100%;
-  z-index: 100;
   * {
     color: red;
   }
+`;
+
+const StyledContent = styled.div`
 `;
 
 export default RouteAbout;
