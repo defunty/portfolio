@@ -17,7 +17,7 @@ const TitleAnimation = () => (
   </React.Fragment>
 )
 
-const title = `Yusuke Inoue`;
+const title = `Yusuke Inou`;
 let textList = [];
 let styleDraw = ``;
 for(let i=0;i<title.length;i++){

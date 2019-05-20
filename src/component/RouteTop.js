@@ -10,6 +10,7 @@ import Particle from './Particle.js';
 
 const RouteTop = () => {
   const [isDisplay, setIsDisplay] = useState('title');
+  
   const getDisplayContent = () => {
     switch(isDisplay){
       case 'title':
@@ -28,9 +29,8 @@ const RouteTop = () => {
   
   return (
     <PageContent className={isDisplay}>
-      <div>
-        <div>{ getDisplayContent() }</div>
-      </div>
+      { getDisplayContent() }
+      <Particle />
     </PageContent>
   );
 }
