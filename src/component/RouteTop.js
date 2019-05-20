@@ -31,7 +31,6 @@ const RouteTop = () => {
       <div>
         <div>{ getDisplayContent() }</div>
       </div>
-      <Particle />
     </PageContent>
   );
 }
