@@ -5,9 +5,9 @@ import Particles from 'react-particles-js';
 const Particle = () => {
   let numberValue = 0;
   if (matchMedia('(max-width: 720px)').matches) {
-    numberValue = 50;
-  }else {
     numberValue = 150;
+  }else {
+    numberValue = 200;
   }
   return(
     <React.Fragment>
@@ -74,7 +74,6 @@ const Particle = () => {
 
 const StyleParticles = styled(Particles)`
   height: 100%;
-  z-index: 10000;
 `;
 
 

@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import Particle from './Particle.js';
 
 const TitleAnimation = () => (
   <React.Fragment>
@@ -13,11 +12,10 @@ const TitleAnimation = () => (
       </svg>
     </MainTitleWrapper>
     <Overlay />
-    
   </React.Fragment>
 )
 
-const title = `Yusuke Inou`;
+const title = `Yusuke Inoue`;
 let textList = [];
 let styleDraw = ``;
 for(let i=0;i<title.length;i++){
@@ -131,7 +129,6 @@ const styleTextTransition = `
     100% { transform: translate(195px,0px); }
   }
 }
-
 `;
 
 const MainTitleWrapper = styled.h1`
@@ -168,7 +165,6 @@ const MainTitleWrapper = styled.h1`
 `;
 
 const Overlay = styled.div`
-  /*background-color: rgb(35,39,65);*/
   background-color: #000;
   height: 100%;
   position: fixed;
@@ -176,13 +172,28 @@ const Overlay = styled.div`
   right: -100%;
   width: 100%;
   z-index: 1;
-
-  animation: 'overlay-transition' 1s ease-in-out 4s both;
+  
+  /*
+  background-color: #000;
+  height: 1px;
+  position: fixed;
+  top: 50%;
+  right: 50%;
+  width: 1px;
+  z-index: 1;
+  */
+  
+  animation: 'overlay-transition' 0.9s ease-in-out 4s both;
   @keyframes overlay-transition {
     0% { transform:translateX(0); }
     100% { transform:translateX(-100%); }
+    /*0% { right: -100%; }
+    100% { right: 0%; }*/
   }
 `;
+
+
+
 
 
 export default TitleAnimation;

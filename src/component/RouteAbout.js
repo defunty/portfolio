@@ -1,10 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import CardList from './CardList.js';
+import StyledContentWrapper from './ContentWrapper.js';
 import Header from './Header.js';
 import Particle from './Particle.js';
 import PageWrapper from './PageWrapper.js';
-import StyledContentWrapper from './ContentWrapper.js';
 
 
 const RouteAbout = () => {
@@ -23,6 +24,8 @@ const Content = () => {
   return(
     <React.Fragment>
       <h1 className="page-title">ABOUT</h1>
+      <CardList />
+      
       <div className="profile">
         <dl>
           <dt>Name:</dt>
@@ -86,6 +89,7 @@ const ContentWrapper = styled(StyledContentWrapper)`
     line-height: 1.5;
   }
 `;
+
 
 
 export default RouteAbout;

@@ -15,13 +15,12 @@ const RouteTop = () => {
     switch(isDisplay){
       case 'title':
         setTimeout(()=>{
-          //setIsDisplay('content');
+          setIsDisplay('content');
         },5500);
-        console.log('title')
+        
         return(<TitleAnimation />);
         break;
       case 'content':
-        console.log('content');
         return(<Content />);
         break;
     }
@@ -30,7 +29,6 @@ const RouteTop = () => {
   return (
     <PageContent className={isDisplay}>
       { getDisplayContent() }
-      <Particle />
     </PageContent>
   );
 }
@@ -39,9 +37,7 @@ const Content = () => {
   return (
     <ContentWrapper>
       <Title>
-        <div className="title test">
-          Yusuke Inoue's Portfolio
-        </div>
+        <h1 className="title">Yusuke Inoue's Portfolio</h1>
       </Title>
       <LinkWrapper>
         <Link className="icon" to='/about'>
@@ -49,6 +45,7 @@ const Content = () => {
         </Link>
       </LinkWrapper>
       <Footer>&copy;2019 Yusuke Inoue All Rights Reserved.</Footer>
+      <Particle />
     </ContentWrapper>
     
   );
@@ -56,7 +53,6 @@ const Content = () => {
 
 // style
 const PageContent = styled.div`
-  background-color: #fff;
   opacity: 1;
   height: 100%;
   width: 100%;
@@ -82,24 +78,29 @@ position: relative;
 height: 100%;
 width: 100%;
 z-index: 100;
+
+canvas {
+  animation: 'page-transition' 1.5s ease-in-out 0s both;
+}
 `;
 
 const Title = styled.div`
+  display: block;
   top: 50vh;
   opacity: 0;
   position: fixed;
   width: 100%;
-  animation: 'initial-animation-link' 0.5s ease-in-out 0s both;
-  @keyframes  initial-animation-link {
-    0% { opacity: 0; }
-    100% { opacity: 1; }
-  }
+  animation: 'page-transition' 1.5s ease-in-out 0s both;
 
   .title{
-    position: absolute;
-    text-align: center;
-    bottom: 0;
+    display: block;
+    font-size: 40px;
     height: auto;
+    position: absolute;
+    bottom: 0;
+
+    padding: 0 8px;
+    text-align: center;
     width: 100%;
     z-index: 100;
     animation: 'up-down-transition' 8.4s ease-in-out 3.4s infinite both;
@@ -111,8 +112,10 @@ const Title = styled.div`
       80% { transform: translateY(0px); }
       100% { transform: translateY(0px); }
     }
+    @media screen and (min-width:720px){
+      font-size: 40px;
+    }
   }
-
 `;
 
 const LinkWrapper = styled.div`
@@ -123,8 +126,9 @@ const LinkWrapper = styled.div`
   top: 50vh;
   padding: 20px;
   width: 100%;
+  z-index: 100;
 
-  animation: 'initial-animation-link' 0.5s ease-in-out 2s both;
+  animation: 'page-transition' 0.5s ease-in-out 1.4s both;
   
   a {
     display: inline-block;
@@ -178,12 +182,14 @@ const Footer = styled.div`
   opacity: 0;
   position: absolute;
   bottom: 0;
-  text-align: right;
-  padding-right: 20px;
+  text-align: center;
   width: 100%;
+  animation: 'page-transition' 0.5s ease-in-out  1.0s both;
 
-  animation: 'initial-animation-link' 0.5s ease-in-out  1.0s both;
-
+  @media screen and (min-width:720px){
+    text-align: right;
+    padding-right: 20px;
+  }
 `;
 
 export default RouteTop;
