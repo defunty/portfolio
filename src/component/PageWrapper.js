@@ -13,7 +13,7 @@ const PageWrapper = ({children}) => {
 const StyledPageWrapper = styled.div`
   background-color: #000;
   position: relative;
-  height: 100%;
+  min-height: 100vh;
   width: 100%;
   * {
     color: #fff;

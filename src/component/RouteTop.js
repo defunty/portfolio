@@ -1,16 +1,17 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import { Link } from 'react-router-dom'
 import styled from 'styled-components';
 import TitleAnimation from './TitleAnimation.js';
 import SVGText from './SVGText.js';
 import SVGPowerOff from './SVGPowerOff.js';
-
 import Particle from './Particle.js';
 
 
 const RouteTop = () => {
   const [isDisplay, setIsDisplay] = useState('title');
-  
+  useEffect(() => {
+    document.title = "Yusuke Inoue";
+  });
   const getDisplayContent = () => {
     switch(isDisplay){
       case 'title':
@@ -36,6 +37,7 @@ const RouteTop = () => {
 const Content = () => {
   return (
     <ContentWrapper>
+      <Particle />
       <Title>
         <h1 className="title">Yusuke Inoue's Portfolio</h1>
       </Title>
@@ -45,7 +47,6 @@ const Content = () => {
         </Link>
       </LinkWrapper>
       <Footer>&copy;2019 Yusuke Inoue All Rights Reserved.</Footer>
-      <Particle />
     </ContentWrapper>
     
   );
@@ -54,7 +55,7 @@ const Content = () => {
 // style
 const PageContent = styled.div`
   opacity: 1;
-  height: 100%;
+  height: 100vh;
   width: 100%;
   z-index: 1;
   * {
@@ -94,7 +95,7 @@ const Title = styled.div`
 
   .title{
     display: block;
-    font-size: 40px;
+    font-size: 20px;
     height: auto;
     position: absolute;
     bottom: 0;

@@ -51,7 +51,7 @@ class App extends React.Component {
 */
 
 const Container = styled.div`
-  height: 100vh;
+  /*height: 100vh;*/
   overflow: hidden;
   width: 100%;
 `;

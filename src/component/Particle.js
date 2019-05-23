@@ -66,17 +66,17 @@ const Particle = () => {
                 }
             }
         }
-        
     }} />
     </React.Fragment>
   )
 }
 
 const StyleParticles = styled(Particles)`
-  height: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
 `;
-
-
-
 
 export default Particle;

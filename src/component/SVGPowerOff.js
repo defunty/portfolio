@@ -2,7 +2,6 @@
 <!-- Generator: Adobe Illustrator 18.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->*/
 
 import React from 'react';
-import styled from 'styled-components';
 
 const SVGPowerOff = () => {
 	return(
