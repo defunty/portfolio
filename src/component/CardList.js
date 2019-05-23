@@ -14,7 +14,7 @@ const CardList = () => {
           category={val.category}
           date={val.date}
           title={val.title}
-          tag={val.tags}
+          tags={val.tags}
           description={val.description}
         />
       )
@@ -44,11 +44,21 @@ const Card = (prop) => {
         <div className="category">{prop.category}</div>
         <div className="date">{prop.date}</div>
         <div className="title">{prop.title}</div>
-        <div className="tag">{prop.tag}</div>
+        <div className="tag"><TagList tags={prop.tags} /></div>
         <div className="description">{prop.description}</div>
         {prop.link !== '' && <a className="link" href={prop.link} target="_blank" rel="noopener">Link</a>}
       </div>
     </StyledCard>
+  );
+}
+
+const TagList = (prop) => {
+  return(
+    <ul class="tag-list">
+      {prop.tags.map((tag,i)=>{
+        return(<li>{tag}</li>);
+      })}
+    </ul>
   );
 }
 

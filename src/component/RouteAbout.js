@@ -9,7 +9,7 @@ import PageWrapper from './PageWrapper.js';
 
 const RouteAbout = () => {
   useEffect(() => {
-    document.title = "Yusuke Inoue | About";
+    document.title = "Y_Inoue | About";
   });
   return(
     <PageWrapper>

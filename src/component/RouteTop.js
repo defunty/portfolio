@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 import { Link } from 'react-router-dom'
 import styled from 'styled-components';
 import TitleAnimation from './TitleAnimation.js';
@@ -8,9 +8,6 @@ import Particle from './Particle.js';
 
 const RouteTop = () => {
   const [isDisplay, setIsDisplay] = useState('title');
-  useEffect(() => {
-    document.title = "Yusuke Inoue";
-  });
   const getDisplayContent = () => {
     switch(isDisplay){
       case 'title':
