@@ -2,7 +2,6 @@ import React, {useState, useEffect} from 'react';
 import { Link } from 'react-router-dom'
 import styled from 'styled-components';
 import TitleAnimation from './TitleAnimation.js';
-import SVGText from './SVGText.js';
 import SVGPowerOff from './SVGPowerOff.js';
 import Particle from './Particle.js';
 

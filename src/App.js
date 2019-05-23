@@ -25,30 +25,6 @@ const App = () => {
   </Container>
   );
 }
-/*
-class App extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {accessed: false};
-    this.toggleAccessed = this.toggleAccessed.bind(this);
-  }
-  render() {
-    const accessed = this.state.accessed;
-    return (
-    <Container>
-      <BrowserRouter>
-        <AccessedContext.Provider value={accessed} >
-          <Route changeAccessed={this.toggleAccessed} exact path='/' component={RouteTop} />
-        </AccessedContext.Provider >
-        <Route path='/works' component={RouteWorks} />
-        <Route path='/sns' component={RouteSNS} />
-        <Route path='/contact' component={RouteContact} />
-      </BrowserRouter>
-    </Container>
-    );
-  }
-}
-*/
 
 const Container = styled.div`
   /*height: 100vh;*/

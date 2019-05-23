@@ -1,6 +1,4 @@
 import React, {useEffect} from 'react';
-import { Link } from 'react-router-dom';
-import { useTransition, animated as a, config } from 'react-spring'
 import styled from 'styled-components';
 import CardList from './CardList.js';
 import StyledContentWrapper from './ContentWrapper.js';
@@ -50,7 +48,7 @@ const Content = () => {
           <dt>Links:</dt>
           <dd>
             <ul className="link-list">
-              <li className="twitter"><a href="https://twitter.com/defunty/" target="_blank" rel="noopener">Twitter</a></li>
+              <li className="twitter"><a href="https://twitter.com/defunty_jp" target="_blank" rel="noopener">Twitter</a></li>
               <li className="qiita"><a href="https://qiita.com/defunty" target="_blank" rel="noopener">Qiita</a></li>
               <li className="github"><a href="https://github.com/defunty" target="_blank" rel="noopener">Github</a></li>
             </ul>
