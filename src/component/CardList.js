@@ -112,8 +112,23 @@ const StyledCard = styled.li`
     font-size: 1.2em;
     margin-bottom: 12px;
   }
+  .tag-list {
+    font-size: 0.8em;
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 8px;
+    li {
+      background-color: gray;
+      border-radius: 4px;
+      padding: 6px 6px;
+      display: block;
+      margin-bottom: 8px;
+      margin-right: 8px;
+    }
+  }
   .description {
     font-size: 1.0em;
+    line-height: 1.5;
   }
   .link {
     background-color: rgba(14,190,255,0.5);
