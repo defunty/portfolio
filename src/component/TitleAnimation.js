@@ -165,31 +165,59 @@ const MainTitleWrapper = styled.h1`
 `;
 
 const Overlay = styled.div`
-  background-color: #000;
+  background-color: rgba(0,0,0,0);
   height: 100%;
   position: fixed;
-  top: 0;
-  right: -100%;
   width: 100%;
   z-index: 1;
-  
-  /*
-  background-color: #000;
-  height: 1px;
-  position: fixed;
-  top: 50%;
-  right: 50%;
-  width: 1px;
-  z-index: 1;
-  */
-  
-  animation: 'overlay-transition' 0.9s ease-in-out 4s both;
-  @keyframes overlay-transition {
-    0% { transform:translateX(0); }
-    100% { transform:translateX(-100%); }
-    /*0% { right: -100%; }
-    100% { right: 0%; }*/
+  &::before{
+    background-color: #000;
+    content: "";
+    height: 100%;
+    position: fixed;
+    width: 100%;
+    z-index: 1;
   }
+  &::before {
+    top: 100%;
+    left: 0%;
+    
+    animation: 'overlay-transition-before' 0.8s ease-in-out 4.0s both;
+    @keyframes overlay-transition-before {
+      0% { transform:translateY(0); }
+      100% { transform:translateY(-100%); }
+    }
+  }
+  @media screen and (min-width: 720px){
+    &::before, &::after {
+      background-color: #000;
+      content: "";
+      height: 100%;
+      position: fixed;
+      width: 50%;
+      z-index: 1;
+    }
+    &::before {
+      bottom: 100%;
+      left: 0%;
+      animation: 'overlay-transition-before' 0.6s ease-in-out 3.9s both;
+      @keyframes overlay-transition-before {
+        0% { transform:translateY(0); }
+        100% { transform:translateY(-100%); }
+      }
+    }
+    &::after {
+      bottom: 100%;
+      left: 50%;
+      animation: 'overlay-transition-after' 0.6s ease-in-out 4.4s both;
+      @keyframes overlay-transition-after {
+        0% { transform:translateY(0); }
+        100% { transform:translateY(100%); }
+      }
+    }
+  }
+  
+  
 `;
 
 

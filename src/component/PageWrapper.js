@@ -5,7 +5,7 @@ const PageWrapper = ({children}) => {
   return(
     <StyledPageWrapper>
       {children}
-    </StyledPageWrapper>  
+    </StyledPageWrapper>
   );
 }
 
@@ -13,13 +13,13 @@ const PageWrapper = ({children}) => {
 const StyledPageWrapper = styled.div`
   background-color: #000;
   position: relative;
+  opacity: 1;
   min-height: 100vh;
+  transition: all 1s;
   width: 100%;
   * {
     color: #fff;
   }
-
-
 `;
 
 

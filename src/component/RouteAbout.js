@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import styled from 'styled-components';
 import CardList from './CardList.js';
 import StyledContentWrapper from './ContentWrapper.js';
@@ -8,14 +8,20 @@ import PageWrapper from './PageWrapper.js';
 
 
 const RouteAbout = () => {
+  const [isRouteTransition, setIsRouteTransition] = useState('is--transition');
+  
   useEffect(() => {
     document.title = "Y_Inoue | About";
+    setTimeout(()=>{
+      setIsRouteTransition('');
+    }, 2000);
   });
+  
   return(
     <PageWrapper>
       <Particle />
-      <Header />
-      <ContentWrapper>
+      <Header className={isRouteTransition} />
+      <ContentWrapper className={isRouteTransition}>
         <Content />
       </ContentWrapper>
     </PageWrapper>
@@ -48,27 +54,12 @@ const Content = () => {
           <dt>Links:</dt>
           <dd>
             <ul className="link-list">
-              <li className="twitter"><a href="https://twitter.com/defunty_jp" target="_blank" rel="noopener">Twitter</a></li>
-              <li className="qiita"><a href="https://qiita.com/defunty" target="_blank" rel="noopener">Qiita</a></li>
-              <li className="github"><a href="https://github.com/defunty" target="_blank" rel="noopener">Github</a></li>
+              <li className="twitter"><a href="https://twitter.com/defunty_jp" target="_blank" rel="noopener noreferrer">Twitter</a></li>
+              <li className="qiita"><a href="https://qiita.com/defunty" target="_blank" rel="noopener noreferrer">Qiita</a></li>
+              <li className="github"><a href="https://github.com/defunty" target="_blank" rel="noopener noreferrer">Github</a></li>
             </ul>
           </dd>
         </dl>
-        
-        <div className="description">
-          フリーのWebプログラマー。<br />
-          業務では主にWebアプリケーションの制作（要件定義・設計・開発・保守）を担当。<br />
-          <br />
-          <span>主な利用言語</span>
-          <ul>
-            <li>PHP（CakePHP）</li>
-            <li>Ruby（Ruby on Rails）</li>
-          </ul>
-          Webサイト制作ではHTML・CSS（SCSS）・JavaScript（Vanilla/jQuery）を利用。<br />
-          <br />
-          同時に個人/チームでのWebサービス開発活動も行なっている。
-          <a href=""></a>
-        </div>
       </div>
       
 
