@@ -7,7 +7,7 @@ const CardList = () => {
   const getActivityData = (data) => {
     let cards = [];
     ActivityData.map((val,i)=>{
-      cards.push(
+      return cards.push(
         <Card
           key={i}
           link={val.link}
@@ -37,7 +37,7 @@ const CardList = () => {
   );
 }
 const Card = (prop) => {
-  const [focuseClass, setFocuseClass] = useState('');
+  const [focuseClass] = useState('');
   return(
     <StyledCard className={focuseClass}>
       <div className="card-wrapper">
@@ -46,7 +46,7 @@ const Card = (prop) => {
         <div className="title">{prop.title}</div>
         <div className="tag"><TagList tags={prop.tags} /></div>
         <div className="description">{prop.description}</div>
-        {prop.link !== '' && <a className="link" href={prop.link} target="_blank" rel="noopener">Link</a>}
+        {prop.link !== '' && <a className="link" href={prop.link} target="_blank" rel="noopener noreferrer">Link</a>}
       </div>
     </StyledCard>
   );
@@ -54,9 +54,9 @@ const Card = (prop) => {
 
 const TagList = (prop) => {
   return(
-    <ul class="tag-list">
+    <ul className="tag-list">
       {prop.tags.map((tag,i)=>{
-        return(<li>{tag}</li>);
+        return(<li key={i}>{tag}</li>);
       })}
     </ul>
   );

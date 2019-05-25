@@ -1,46 +1,60 @@
-import React, {useState} from 'react';
-import { Link } from 'react-router-dom'
+import React, { useState, useContext } from 'react';
+import { withRouter } from 'react-router-dom'
 import styled from 'styled-components';
-import TitleAnimation from './TitleAnimation.js';
-import SVGPowerOff from './SVGPowerOff.js';
 import Particle from './Particle.js';
+import RouteTopContext from './RouteTopContext.js';
+import SVGPowerOff from './SVGPowerOff.js';
+import TitleAnimation from './TitleAnimation.js';
 
 
-const RouteTop = () => {
+const RouteTop = (prop) => {
   const [isDisplay, setIsDisplay] = useState('title');
+  
+
   const getDisplayContent = () => {
     switch(isDisplay){
       case 'title':
         setTimeout(()=>{
           setIsDisplay('content');
         },5500);
-        
         return(<TitleAnimation />);
-        break;
       case 'content':
         return(<Content />);
-        break;
+      default:
+        return(<TitleAnimation />);
     }
   }
-  
   return (
-    <PageContent className={isDisplay}>
-      { getDisplayContent() }
-    </PageContent>
+    <RouteTopContext.Provider value={prop}>
+      <PageContent className={isDisplay}>
+        { getDisplayContent() }
+      </PageContent >
+    </RouteTopContext.Provider>
   );
 }
 
-const Content = () => {
+const Content = (prop) => {
+  const [isRouteTransition, setIsRouteTransition] = useState('');
+  const routeTopContext = useContext(RouteTopContext);
+    
+  const handleToAboutPage = () => {
+    setIsRouteTransition(() =>{
+      setTimeout(() => {
+        routeTopContext.history.push('/about');
+      }, 2000);
+      return 'is--transition';
+    })
+  }
   return (
     <ContentWrapper>
       <Particle />
-      <Title>
+      <Title className={isRouteTransition}>
         <h1 className="title">Yusuke Inoue's Portfolio</h1>
       </Title>
-      <LinkWrapper>
-        <Link className="icon" to='/about'>
+      <LinkWrapper className={isRouteTransition}>
+        <div className="icon" onClick={() => { handleToAboutPage(); }}>
           <SVGPowerOff />
-        </Link>
+        </div>
       </LinkWrapper>
       <Footer>&copy;2019 Yusuke Inoue All Rights Reserved.</Footer>
     </ContentWrapper>
@@ -113,6 +127,10 @@ const Title = styled.div`
       font-size: 40px;
     }
   }
+  &.is--transition .title {
+    transition: all 1s;
+    opacity: 0;
+  }
 `;
 
 const LinkWrapper = styled.div`
@@ -127,7 +145,8 @@ const LinkWrapper = styled.div`
 
   animation: 'page-transition' 0.5s ease-in-out 1.4s both;
   
-  a {
+  .icon {
+    cursor: pointer;
     display: inline-block;
     width: auto;
   }
@@ -159,7 +178,7 @@ const LinkWrapper = styled.div`
         }
       }
     }
-    &:hover .d1, &:hover .d2{
+    &:hover .d1, &:hover .d2 {
       transition: 0s fill;
       fill: #52b043;
       opacity: 0;
@@ -173,6 +192,19 @@ const LinkWrapper = styled.div`
         }
       }
     }
+  }
+  &.is--transition
+    .icon{
+      .d1, .d2 {
+        fill: #52b043;
+        animation: 'd-transition-animation' 0.5s linear 1.3s both;
+        @keyframes  d-transition-animation {
+          0% { opacity: 1; }
+          100% { opacity: 0; }
+        }
+      }
+    }
+    
   }
 `;
 const Footer = styled.div`
@@ -189,4 +221,4 @@ const Footer = styled.div`
   }
 `;
 
-export default RouteTop;
+export default withRouter(RouteTop);
