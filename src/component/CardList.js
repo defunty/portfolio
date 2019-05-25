@@ -118,7 +118,8 @@ const StyledCard = styled.li`
     flex-wrap: wrap;
     margin-bottom: 8px;
     li {
-      background-color: gray;
+      border: 1px solid rgba(14,190,255,1);
+      color: rgba(14,190,255,1);
       border-radius: 4px;
       padding: 6px 6px;
       display: block;
@@ -129,6 +130,7 @@ const StyledCard = styled.li`
   .description {
     font-size: 1.0em;
     line-height: 1.5;
+    word-break: break-word;
   }
   .link {
     background-color: rgba(14,190,255,0.5);
@@ -296,18 +298,18 @@ const StyledCard = styled.li`
 
 const ActivityData = [
   {
-    link:'', category:'Works', date:'2019', title:'自身のポートフォリオをリニューアル',
+    link:'https://github.com/defunty/portfolio', category:'Works', date:'2019', title:'自身のポートフォリオをリニューアル',
     tags: ['React','styled-components','React Hooks','Netlify'],
-    description: '本サイト。Reactの学習目的のために全て刷新。表示についてはreact-particle, react-springを利用。'
+    description: '本サイト。Reactの学習目的のために全て刷新。表示についてはreact-router, react-particle, react-masonry-componentを利用。'
   },
   {
     link:'https://a-word-z.com/', category:'Works', date:'2019', title:'英単語学習管理サービス',
-    tags: ['Ruby on Rails5','python3','jQuery','Heroku'],
+    tags: ['Ruby on Rails5','Python3','jQuery','Heroku'],
     description: '英単語の記憶状況を管理するためのWebアプリ。アプリケーションはRailsで構築。英文から全ての英単語を抽出・原型化・翻訳する機能を実装するため、自然言語処理ライブラリのNLTKを利用してPythonでスクリプトを作成。英単語抽出処理は別途構築したAPIサーバーに実装し、アプリケーションのビジネスロジックからのみ呼び出せる形とした。'
   },
   {
     link:'https://dekill.netlify.com/', category:'Works', date:'2018', title:'Web技術ごとの求人率比較ツール',
-    tags: ['python3','jQuery','Netlify'],
+    tags: ['Python3','jQuery'],
     description: '求人率から技術トレンドを可視化するためのWebアプリ。技術ごとの求人数はIT系求人サイトの公開情報をPythonで書いたスクレイピング処理で取得。スクレイピング処理はPython3で記述。一部求人サイトでは求人件数の取得処理が非同期通信で行われていたため、Seleniumで非同期なスクレイピング処理を実装。グラフ表示はchart.jsを利用。'
   },
   /*
