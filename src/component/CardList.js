@@ -82,7 +82,10 @@ const StyledCard = styled.li`
   height: auto;
   margin-bottom: 10px;
   padding: 5px;
-  width: 50%;
+  width: 100%;
+  @media screen and (min-width: 720px){
+    width: 50%;
+  }
   .card-wrapper {
     background-color: rgba(0,0,0,0.3);
     display: block; 
