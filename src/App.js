@@ -10,7 +10,7 @@ import RouteAbout from './component/RouteAbout.js';
 const App = () => {
   return (
   <Container>
-    <Helmet
+    {/*<Helmet
       title={'Hello World'}
       meta={[
         { name: 'twitter:title', content: 'Y.Inoue' },
@@ -25,7 +25,7 @@ const App = () => {
         { property: 'og:description', content: "Yusuke Inoue's Portfolio. Web developer." },
         { property: 'og:url', content: `Y.Inoue` }
       ]}
-    />
+    />*/}
     <BrowserRouter>
       <Route exact path='/' component={RouteTop} />
       <Route path="/about" component={RouteAbout} />
