@@ -300,7 +300,7 @@ const ActivityData = [
   {
     link:'https://github.com/defunty/portfolio', category:'Works', date:'2019', title:'自身のポートフォリオをリニューアル',
     tags: ['React','styled-components','React Hooks','Netlify'],
-    description: '本サイト。Reactの学習目的のために全て刷新。表示についてはreact-router, react-particle, react-masonry-componentを利用。'
+    description: '本サイト。ReactとSVGアニメーションの学習目的のために全て刷新。React Hooksを利用。React表示についてはreact-router, react-particle, react-masonry-componentを利用。OGPの設定にはreact-helmetで対応。'
   },
   {
     link:'https://a-word-z.com/', category:'Works', date:'2019', title:'英単語学習管理サービス',
