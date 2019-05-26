@@ -67,8 +67,6 @@ const TagList = (prop) => {
 const StyledCardList = styled(Masonry)`
   display: flex;
   flex-wrap: wrap;
-  margin-right: 10px;
-  margin-left: 10px;
   width: 100%;
 
   /*grid-template-rows: 180px 100px 80px 120px auto;*/
