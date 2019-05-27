@@ -301,7 +301,7 @@ const ActivityData = [
   {
     link:'https://github.com/defunty/portfolio', category:'Works', date:'2019', title:'自身のポートフォリオをリニューアル',
     tags: ['React','styled-components','React Hooks','Netlify'],
-    description: '本サイト。ReactとSVGアニメーションの学習目的のために全て刷新。React Hooksを利用。React表示についてはreact-router, react-particle, react-masonry-componentを利用。OGPの設定にはreact-helmetで対応。'
+    description: '本サイト。ReactとSVGアニメーションの学習目的のために全て刷新。React Hooksを利用。React表示についてはreact-router, react-particle, react-masonry-componentを利用。'
   },
   {
     link:'https://a-word-z.com/', category:'Works', date:'2019', title:'英単語学習管理サービス',
@@ -311,7 +311,7 @@ const ActivityData = [
   {
     link:'https://dekill.netlify.com/', category:'Works', date:'2018', title:'Web技術ごとの求人率比較ツール',
     tags: ['Python3','jQuery'],
-    description: '求人率から技術トレンドを可視化するためのWebアプリ。技術ごとの求人数はIT系求人サイトの公開情報をPythonで書いたスクレイピング処理で取得。スクレイピング処理はPython3で記述。一部求人サイトでは求人件数の取得処理が非同期通信で行われていたため、Seleniumで非同期なスクレイピング処理を実装。グラフ表示はchart.jsを利用。'
+    description: '求人率から技術トレンドを可視化するためのWebアプリ。技術ごとの求人数はIT系求人サイトの公開情報をPythonで書いたスクレイピング処理で取得。一部求人サイトでは求人件数の取得処理が非同期通信で行われていたため、Seleniumで非同期なスクレイピング処理を実装。グラフ表示はchart.jsを利用。'
   },
   /*
   {
