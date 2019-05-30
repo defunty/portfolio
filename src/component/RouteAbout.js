@@ -43,14 +43,6 @@ const Content = () => {
           <dd>Web Developer</dd>
         </dl>
         <dl>
-          <dt>Email:</dt>
-          <dd>
-            <a href="mailto:defunty@gmail.com">
-              defunty@gmail.com
-            </a>
-          </dd>
-        </dl>
-        <dl>
           <dt>Links:</dt>
           <dd>
             <ul className="link-list">
