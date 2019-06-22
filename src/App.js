@@ -5,6 +5,7 @@ import './reset.css';
 import './index.css';
 import RouteTop from './component/RouteTop.js';
 import RouteAbout from './component/RouteAbout.js';
+import RouteSkill from './component/RouteSkill.js';
 
 
 const App = () => {
@@ -29,6 +30,7 @@ const App = () => {
     <BrowserRouter>
       <Route exact path='/' component={RouteTop} />
       <Route path="/about" component={RouteAbout} />
+      <Route path="/skill" component={RouteSkill} />
     </BrowserRouter>
   </Container>
   );
