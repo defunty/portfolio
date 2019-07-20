@@ -1,1 +1,2 @@
-This is Yusuke Inoue's portfolio with React.js, static page.
+This is My portfolio with React.js, static page.
+https://defunty.dev
